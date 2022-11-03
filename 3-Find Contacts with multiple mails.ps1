@@ -240,7 +240,3 @@ Write-TechguyLog -Type INFO -Text "Clean Log Files"
 $limit = (Get-Date).AddDays(-$DeleteAfterDays)
 Get-ChildItem -Path $LogPath -Filter "*$LogfileName.log" | Where-Object { !$_.PSIsContainer -and $_.CreationTime -lt $limit } | Remove-Item -Force
 Write-TechguyLog -Type INFO -Text "END Script"
-
-
-
-
